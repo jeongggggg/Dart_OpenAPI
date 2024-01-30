@@ -6,6 +6,65 @@
     <title>Dart_OpenAPI</title>
 </head>
 <body>
-    
+    <div class="wrap">
+        <div class="sub_cont disclosure_wrap">
+            <div class="sub_tit_wr">
+                <h2>공시정보</h2>
+            </div>
+            <div class="sub_sort_wr">
+                <div class="sort_priod_box left_wr">
+                    <label for="period" class="txt_tit">기간</label>
+                    <div class="sort_select_box com-gray_box month_s">
+                        <select id="period" class="nice-select" name="firstNiceSelect" onchange="searchByPeriod()">
+                            <option value="custom">직접 선택</option>
+                            <option value="1">1개월</option>
+                            <option value="3">3개월</option>
+                            <option value="6" selected>6개월</option>
+                            <option value="12">1년</option>
+                            <option value="all">전체</option>
+                        </select>
+                    </div>
+                    <div class="selectDateBox input_period com-gray_box">
+                        <input type="text" id="startDate" class="date_time_picker period_show_start back_search_obj" readonly>
+                        <img src="/img/front/icon/icon_hyphen_gray.webp" alt="aekyung" class="hyphen icon">
+                        <input type="text" id="endDate" class="date_time_picker period_show_end back_search_obj" readonly>
+                    </div>
+                </div>
+                <div class="sort_category_box right_wr">
+                    <h3 class="txt_tit">공시유형</h3>
+                    <div class="sort_input_wr">
+                        <div class="sort_select_box com-gray_box">
+                            <select id="periodCate" class="nice-select" name="secondNiceSelect" onchange="searchByPeriod()">
+                                <option value="none">공시유형 선택</option>
+                                <option value="A">정기공시</option>
+                                <option value="B">주요사항보고</option>
+                                <option value="C">발행공시</option>
+                                <option value="D">지분공시</option>
+                                <option value="E">기타공시</option>
+                                <option value="F">외부감사관련</option>
+                                <option value="G">펀드공시</option>
+                                <option value="H">자산유동화</option>
+                                <option value="I">거래소공시</option>
+                                <option value="J">공정위공시</option>
+                            </select>
+            
+                        </div>
+                    </div>
+                    <button id="searchButton" onclick="searchWithFilters()" class="btn-roundGrad">검색</button>
+                </div>
+            </div>
+            <div class="disclosure_cont">
+                <div class="table_default type03 table-container">
+                    <div id="data-table"></div>
+                </div>
+                <p class="noti">
+                    본 자료는 금융감독원 전자공시시스템(
+                        <a href="https://dart.fss.or.kr" target="_blank">https://dart.fss.or.kr</a>
+                        )의 검색결과입니다
+                </p>
+                <ul id="pagination"></ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

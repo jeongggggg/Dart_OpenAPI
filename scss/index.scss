@@ -1,0 +1,286 @@
+//공통 클래스
+.com-gray_box {
+    display: flex;
+    align-items: center;
+    min-width: 18rem;
+    background-color: #f8f8f8;
+    letter-spacing: -0.045rem;
+    padding: 0 0.8rem;
+    border-radius: 2.4rem;
+    color: #292929;
+    max-width: 40rem;
+    height: 4.8rem;
+    position: relative;
+
+    @include mo{
+        height: 3.7rem;
+        max-width: none;
+    }
+
+    &.selectDateBox {
+        width: 40.8rem;
+        margin-left: 1rem;
+        position: relative;
+        justify-content: space-between;
+
+        @include mo{
+            width: 100%;
+            margin-left: 0;
+            min-width: auto;
+        }
+
+        .hyphen{
+            position: absolute;
+            left: 46%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    input, select {
+        color: #292929;
+        border: 0;
+        background-color: transparent;
+        line-height: 4.8rem;
+        font-weight: bold;
+        @include fz15;
+        &:focus {
+            border: none;
+        }
+    }
+    select {
+        color: rgba(22, 22, 22, 0.5);
+        z-index: 999;
+    }
+}
+
+.btn-roundGrad {
+    width: clamp(10rem, 10vw,16.5rem);
+    line-height: 4.8rem;
+    border-radius: 2.4rem;
+    background: #2b2c32;
+    padding: 0 2rem;
+    color: rgba(41, 41, 41, 0.9);
+    font-weight: bold;
+    @include fz15;
+    letter-spacing: -0.09rem;
+    background-image: linear-gradient(to right, #fadcdd, #f6e8f1);
+    margin-left: 1rem;
+    cursor: pointer;
+
+    @include mo{
+        width: 100%;
+        height: 3.7rem;
+        line-height: 3.7rem;
+        margin-top: 1.5rem;
+        margin-left: 0;
+    }
+}
+
+.xdsoft_datetimepicker table {
+    table-layout: fixed;
+}
+
+
+
+//공시정보_soo
+.disclosure_soo {
+    .table_default{
+        &.type03 {
+            tr{
+                &:first-child{
+                    background-color: #f8f8f8;
+                }
+            }
+
+            th{
+                &:first-child{
+                    @include mo{
+                        padding-left: 2rem;
+                    }
+                }
+            }
+    
+            td{
+                padding: 1.6rem 1.3rem;
+                &:first-child{
+                    @include mo{
+                        padding-left: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    .sub_sort_wr {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 5rem 0;
+        margin-bottom: 4rem;
+
+        @include mo_989{
+            display: grid;
+        }
+
+        @include mo{
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+        .txt_tit {
+            @include fz16;
+            font-weight: bold;
+            letter-spacing: -0.096rem;
+            color: #161616;
+            margin-right: 2rem;
+
+            @include mo_989{
+                width: 6rem;
+            }
+
+            @include mo{
+                display: none;
+            }
+        }
+
+
+        .sort_priod_box {
+            display: flex;
+            align-items: center;
+            .sort_input_wr{
+                display: flex;
+            }
+
+            &.left_wr{
+                @include mo{
+                    display: block;
+                }
+            }
+        }
+
+        .sort_category_box {
+            &.right_wr{
+                @include mo_989{
+                    margin-top: 1.5rem;
+                    margin-left: 0;
+                }
+
+                @include mo{
+                    display: block;
+                }
+            }
+            .sort_select_box{
+                width: clamp(15rem, 16vw, 31rem);
+
+                @include mo{
+                    width: 100%;
+                }
+            }
+            display: flex;
+            align-items: center;
+            margin-left: 6rem;
+        }
+    }
+
+    #pagination{
+        li:not(.page_btn){
+            width: 1.4rem;
+            margin: 0 1rem;
+        }
+    }
+
+    .month_s{
+        .nice-select-wrap{
+            z-index: 7;
+        }
+    }
+
+    .nice-select-wrap {
+        margin: 0;
+        @include fz15; 
+        border-radius: 5px;
+        padding-left: 2rem;
+        border-radius: 2.4rem;
+        box-shadow: none;
+        width: 100%;
+        top: 0;
+        z-index: 5;
+        
+        &.down{
+            box-shadow: 0 0 13.5px 1.5px rgba(151,132,132,.08);
+        }
+        .drop{
+            padding: 0;
+            @include fz15;
+            @include mo {
+                height: 3.7rem;
+                line-height: 3.7rem;
+                font-size: clamp(1rem,1vw,1.6rem);
+            }
+            &::after {
+                @include mo {
+                    right: 1.2rem;
+                }
+            }
+        }
+        ul {
+            a {
+                padding: 0;
+            }
+        }
+    }
+
+    .nice-select{
+        display: none;
+    }
+
+    .list_pagination{
+        margin-top: 7rem;
+        @include mo{
+            margin-top: 5rem;
+        }
+    }
+}
+
+
+.selectDateBox{
+    // pointer-events: none;
+    // cursor: default;
+    position: relative;
+
+    @include mo{
+        margin-top: 1.5rem;
+    }
+
+    // &::before{
+    //     content: "";
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: rgba(0, 0, 0, 0.1);
+    //     border-radius: 2.4rem;
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    // }
+
+    &.on{
+        pointer-events: auto;
+        cursor: pointer;
+
+        &::before{
+           display: none;
+        }
+    }
+}
+
+.input_period input{
+    background: url(/img/front/icon/general_icon_calender.png) left center/36px no-repeat;
+    padding-left: 5.4rem;
+    padding-right: 4.7rem;
+    // width: 20rem;
+
+    @include mo{
+        background: url(/img/front/icon/general_icon_calender.png) left center/26px no-repeat;
+        padding-left: 3.4rem;
+        padding-right: 0;
+    }
+}
