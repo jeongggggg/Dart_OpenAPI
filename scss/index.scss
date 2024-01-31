@@ -276,13 +276,13 @@
 }
 
 .input_period input{
-    background: url(/img/front/icon/general_icon_calender.png) left center/36px no-repeat;
+    background: url(/img/icon/general_icon_calender.png) left center/36px no-repeat;
     padding-left: 5.4rem;
     padding-right: 4.7rem;
     // width: 20rem;
 
     @include mo{
-        background: url(/img/front/icon/general_icon_calender.png) left center/26px no-repeat;
+        background: url(/img/icon/general_icon_calender.png) left center/26px no-repeat;
         padding-left: 3.4rem;
         padding-right: 0;
     }
