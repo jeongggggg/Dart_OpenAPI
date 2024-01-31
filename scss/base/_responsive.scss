@@ -1,0 +1,122 @@
+/*반응형 화면 크기*/
+$pc: 1921px;
+$pc_2560: 2560px;
+$pc_1800: 1800px;
+$pc_1440: 1440px;
+$pc_1280: 1280px;
+$tablet: 1024px;
+$mo_989: 989px;
+$mo_834: 834px;
+$mo: 767px;
+$mo_500: 500px;
+$mo_400: 400px;
+$mo_350: 350px;
+$mo_330: 330px;
+$mo_300: 300px;
+
+/* 1920px 이상일때 */
+/* 1920 - 2600 (2560x1600 125%) */
+@mixin pc_1920{
+    @media (min-width: $pc){
+        @content;
+    }
+}
+/* 1800px 이하일때 */
+/* 1550이하 (1920x1080 125%) */
+@mixin pc_1800{
+    @media (max-width: $pc_1800){
+        @content;
+    }
+}
+/* 1440px 이하일때 */
+@mixin pc_1440{
+    @media (max-width: $pc_1440){
+        @content;
+    }
+}
+/* 1280px 이상일때 - 1차 반응형 */ 
+@mixin mo_1280{
+    @media (min-width: $pc_1280){
+        @content;
+    }
+}/* 1280px 이하일때 - 1차 반응형 */ 
+@mixin pc_1280{
+    @media (max-width: $pc_1280){
+        @content;
+    }
+}
+/* 1024px 이하일때 */
+@mixin tablet{
+    @media (max-width: $tablet){
+        @content;
+    }
+}
+/* 989px 이상일때 - 2차 반응형 */
+@mixin pc_989{
+    @media (min-width: $mo_989){
+        @content;
+    }
+}
+/* 989px 이하일때 - 2차 반응형 */
+@mixin mo_989{
+    @media (max-width: $mo_989){
+        @content;
+    }
+}
+/* 834px 이하일때 - 패드 세로형 */
+@mixin mo_834{
+    @media (max-width: $mo_834){
+        @content;
+    }
+}
+/* 767px 이상일때 */
+@mixin pc{
+    @media (min-width: $mo){
+        @content;
+    }
+}
+/* 767px 이하일때 */
+@mixin mo{
+    @media (max-width: $mo){
+        @content;
+    }
+}
+/* 500px 이하일때 */
+@mixin mo_500{
+    @media (max-width: $mo_500){
+        @content;
+    }
+}
+/* 400px 이하일때 */
+@mixin mo_400{
+    @media (max-width: $mo_400){
+        @content;
+    }
+}
+
+/* 350px 이하일때 */
+@mixin mo_350{
+    @media (max-width: $mo_350){
+        @content;
+    }
+}
+/* 330px 이하일때 */
+@mixin mo_330{
+    @media (max-width: $mo_330){
+        @content;
+    }
+}
+
+/* 300px 이하일때 */
+@mixin mo_300{
+    @media (max-width: $mo_300){
+        @content;
+    }
+}
+
+/*넓이, 높이 자동 계산함수*/
+@mixin square($size){
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
+}
