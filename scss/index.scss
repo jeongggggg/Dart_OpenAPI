@@ -388,56 +388,56 @@
         transform: translateY(-50%);
       }
     }
-    
-    ul {
-      width: 100%;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: visible;
-      max-height: 20rem;
-      overflow-y: auto;
-      display: none;
-          
-      &::-webkit-scrollbar {
-        width: 2px;  /* 스크롤바의 너비 */
-      }
-    
-      &::-webkit-scrollbar-thumb {
-          height: 5%; /* 스크롤바의 길이 */
-          background: rgba(64, 64, 64, 0.5); /* 스크롤바의 색상 */
-          
-          border-radius: 10px;
-        }
-      
-      &::-webkit-scrollbar-track {
-        width: 50px;
-        background: #fff;  /*스크롤바 뒷 배경 색상*/
-      }
-  
-      &::-webkit-scrollbar-button:vertical:start:decrement,
-      .sidebar.close > .copy-sub > .sub-menu::-webkit-scrollbar-button:vertical:start:increment {
-          display: block;
-          height: 25px;
-      }
-  
-      &::-webkit-scrollbar-button:vertical:end:decrement {
-          display: block;
-          width: 25px;
-      }
-      
-      a {
-        position: relative;
+  }
+
+  ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    max-height: 20rem;
+    overflow-y: auto;
+    display: none;
         
-        &:hover {
-          background-color: #fff;
-        }
-      }
+    &::-webkit-scrollbar {
+      width: 2px;  /* 스크롤바의 너비 */
+    }
   
-      &.select-ul{
-        &.down{
-          background-color: #fff;
-        }
+    &::-webkit-scrollbar-thumb {
+        height: 5%; /* 스크롤바의 길이 */
+        background: rgba(64, 64, 64, 0.5); /* 스크롤바의 색상 */
+        
+        border-radius: 10px;
+      }
+    
+    &::-webkit-scrollbar-track {
+      width: 50px;
+      background: #fff;  /*스크롤바 뒷 배경 색상*/
+    }
+
+    &::-webkit-scrollbar-button:vertical:start:decrement,
+    .sidebar.close > .copy-sub > .sub-menu::-webkit-scrollbar-button:vertical:start:increment {
+        display: block;
+        height: 25px;
+    }
+
+    &::-webkit-scrollbar-button:vertical:end:decrement {
+        display: block;
+        width: 25px;
+    }
+    
+    a {
+      position: relative;
+      
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+    &.select-ul{
+      &.down{
+        background-color: #fff;
       }
     }
   }

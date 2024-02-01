@@ -44,6 +44,7 @@ const openDartApi = (page) => {
 
     // API 요청 URL
     const localUrl = `https://cors-anywhere.herokuapp.com/https://opendart.fss.or.kr/api/list.json?crtfc_key=${crtfc_key}&corp_code=${corp_code}&bgn_de=${bgn_de}&end_de=${end_de}&page_count=${page_count}&page_no=${page_no}${pblntf_ty}`;
+
     // console.log(pblntf_ty, apiUrl)
 
     // Axios를 사용하여 API 요청
