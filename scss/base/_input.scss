@@ -1,0 +1,353 @@
+// input common
+input[type="text"], 
+input[type="password"], 
+input[type="tel"], 
+input[type="email"], 
+input[type="file"],
+select, 
+.nice-select {
+    width: 100%;
+    @include fz15;
+    padding: 0 2rem;
+    height: 4.9rem;
+    line-height: 4.9rem;
+    max-width: 70rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #fff;
+    @include mo {
+        height: 3.9rem;
+        line-height: 3.9rem;
+        line-height: 4rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+    @include mo_330 {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    &:disabled {
+        background: #f1f1f1;
+        cursor: not-allowed;
+        &::placeholder {
+            color:  rgba(22, 22, 22, 0.8);
+        }
+        &:focus {
+            border: 1px solid rgba(0,0,0,.1);
+        }
+    }
+    &::placeholder {
+        font-size: clamp(1.1rem,1.6vw,1.5rem);
+        color: rgba(22, 22, 22, 0.4);
+        letter-spacing: -0.9px;
+    }
+}
+//readonly 공통 스타일 
+.email_wr input[type="text"][readonly],
+.sec_result_chk input[type="text"][readonly],
+input[type="password"][readonly],
+input[type="email"][readonly],
+input[type="tel"][readonly],
+textarea[readonly] {
+    background: #f1f1f1;
+    cursor: not-allowed;
+    &::placeholder {
+        color: rgba(22, 22, 22, 0.8);
+    }
+    &:focus {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+input[type="password"][readonly] + .btn_pw_toggle {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="file"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+.textarea_box:focus-within,
+.nice-select:active,
+.nice-select:focus,
+.nice-select.open {
+    border: solid 1px #000;
+}
+input::placeholder,
+textarea::placeholder {
+	color: rgba(93, 93, 93, 0.5);
+    font-weight: normal;
+    font-family: 'Noto Sans KR', sans-serif;
+    // text-transform: uppercase;
+}
+input.only_number {
+    letter-spacing: 0.5px;
+    &::placeholder {
+        letter-spacing: -0.13rem;
+    }
+}
+input[type="password"] {
+    // letter-spacing: 2px;
+    &::placeholder {
+        // letter-spacing: -.13rem;
+    }
+    @include mo {
+        font-weight: bold;
+    }
+}
+
+
+
+
+//input search 'x' delete
+input::-ms-clear,
+input::-ms-reveal{
+	display:none;width:0;height:0;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+	display:none;
+}
+
+// input file
+input[type=file]::file-selector-button {
+    display: none;
+}
+
+// input radio
+.ip_radio {
+    &:not(:last-child) {
+        margin-right: clamp(1.5rem, 3vw, 4rem);
+    }
+    input {
+        display: none;
+    }
+    input+label {
+        background: url("/img/icon/ip_radio_off.webp") no-repeat left top 0.4rem/2.5rem;
+        @include fz15;
+        padding: 0.4rem;
+        padding-left: 3.5rem;
+        cursor: pointer;
+        line-height: initial !important;
+        display: inline-block;
+        @include mo {
+            background: url("/img/icon/ip_radio_off.webp") no-repeat left top 0.4rem/2rem;
+            padding-left: 2.5rem;
+        }
+    }
+    input:disabled+label {
+        background: url("/img/icon/ip_radio_disabled.webp") no-repeat left top 0.4rem/2.5rem;
+        cursor: not-allowed;
+        @include mo {
+            background: url("/img/icon/ip_radio_disabled.webp") no-repeat left top 0.4rem/2rem;
+        }
+    }
+    input:checked+label {
+        background: url("/img/icon/ip_radio_on.webp") no-repeat left top 0.4rem/2.5rem;
+        @include mo {
+            background: url("/img/icon/ip_radio_on.webp") no-repeat left top 0.4rem/2rem;
+        }
+    }
+}
+
+
+.input_chk{
+	position: relative;
+    input[type="checkbox"],input[type="radio"]{
+        margin: 0;
+        position: absolute;
+        &:checked + .input_chk_label:before{
+            background: url("/img/icon/icon_chk_on.webp") no-repeat center/contain;
+        }
+    }
+    input[type="checkbox"]:disabled + .input_chk_label:before,
+    input[type="checkbox"][readonly] + .input_chk_label:before {
+        cursor: not-allowed;
+        transition: none;
+        background: #f1f1f1;
+        border: 1px solid rgba(0,0,0,.1);
+        box-sizing: border-box;
+    }
+    & + .input_chk{
+        margin-left: 3rem;
+    }
+}
+.input_chk_label{
+    line-height: 2.6rem;
+    &:before{
+        content: '';
+        width: 2.5rem;
+        height: 2.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        // background: url("/img/icon/icon_chk_off.webp") no-repeat center/contain;
+        background: url("/img/icon/icon_chk_off02.png") no-repeat center/contain;
+        // border-radius: 5px;
+        cursor: pointer;
+        margin: -.3rem 0.3rem 0 0;
+        @include mo {
+            width: 2rem;
+            height: 1.9rem;
+        }
+    }
+    .input_txt{
+        display: inline-block;
+        @include fz15;
+        line-height: 2.6rem;
+    }
+}
+
+.input_file{
+	position: relative;
+    max-width: 70rem;
+    input {
+        width: calc(70rem - 12.9rem);
+        @include mo {
+            width: calc(100% - 3.9rem);
+        }
+    }
+    input[type="file"]{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        opacity: 1;
+        cursor: pointer;
+        z-index: 9;
+        background: transparent;
+        color: transparent;
+        border: transparent;
+        &::file-selector-button {
+            opacity: 0;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            &::placeholder {
+                color:  rgba(22, 22, 22, 0.8);
+            }
+        }
+    }
+    .del_btn {
+		@include abs_t50;
+		cursor: pointer;
+		right: 70px;
+		z-index: 1;
+		span {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e4e4e4;
+            border: 0;
+            &::before {
+                @include virtual;
+                width: 13px;
+                height: 5px;
+                background: #a1a1a1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+		}
+        &.cancleBtn {
+            z-index: 99;
+            width: 2rem;
+            height: 2rem;
+            right: clamp(1rem,1vw,1.5rem);
+            span {
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: #d3d3d3;
+                &::before {
+                    width: 0.8rem;
+                    height: 1px;
+                    background: #fff;
+                }
+            }
+        }
+	}
+    .btn_upload{
+        position: absolute;
+        @include fz15;
+        top: 0;
+        right: 0;
+        width: 11.9rem;
+        height: 4.9rem;
+        line-height: 4.9rem;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+        padding: 0 1.9rem;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 1.9rem;
+            transform: translate(0, -50%);
+            background: url("/img/icon/btn_upload.webp") no-repeat center/contain;
+            width: 1.8rem;
+            height: 1.7rem;
+            @include mo {
+                right: 1rem;
+                width: 1.5rem;
+                height: 1.4rem;
+            }
+        }
+        @include mo {
+            height: 3.9rem;
+            line-height: 3.9rem;
+            padding: 0 1.2rem;
+            width: 8.9rem;
+        }
+
+    }
+    //파일 업로드 input 서류 아이콘 추가
+    &.input_upload {
+        &::after {
+            @include virtual;
+            width: 17px;
+            height: 23px;
+            background: url("/img/icon/icon_upload.png") no-repeat center/contain;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .input_file_box {
+            padding: 0 4.5rem;
+        }
+    }
+}
+
+// textarea 
+textarea {
+    display: block;
+    @include fz15;
+    width: 100%;
+    resize: none;
+    padding: 1.5rem 1.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    height: 33.4rem;
+    &:disabled, &:read-only {
+        background: #f1f1f1;
+        cursor: not-allowed;
+        color: rgba(22, 22, 22, 0.8);
+        &.ver_white {
+            background-color: #fff;
+        }
+    }
+    @include mo {
+        padding-left: 1.2rem;
+    }
+}
+

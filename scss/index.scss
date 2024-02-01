@@ -1,7 +1,35 @@
 @import "./base/mixins";
 @import "./base/responsive";
+@import "./base/input";
+@import "./base/datepicker";
+@import "./base/table";
 
-//공통 클래스
+* {
+    color: #161616;
+    font-size: 62.5%;
+    letter-spacing: normal;
+    font-family: "NotoSansCJKkr","Noto Sans JP","Noto Sans SC","Noto Sans KR",sans-serif !important;
+}
+
+.content_wrapper{
+    width: 100%;
+    max-width: 150rem;
+    margin: 0 auto;
+    padding: 27rem 5rem 14rem;
+}
+
+.disclosure_wrap{
+    .sub_tit_wr{
+        h2{
+            font-weight: bold;
+            letter-spacing: -1.92px;
+            margin-bottom: 3.6rem;
+            text-align: center;
+            font-size: clamp(2rem,3.8vw,3.2rem);
+        }
+    }
+}
+
 .com-gray_box {
     display: flex;
     align-items: center;
@@ -60,15 +88,14 @@
     width: clamp(10rem, 10vw,16.5rem);
     line-height: 4.8rem;
     border-radius: 2.4rem;
-    background: #2b2c32;
     padding: 0 2rem;
     color: rgba(41, 41, 41, 0.9);
     font-weight: bold;
     @include fz15;
     letter-spacing: -0.09rem;
-    background-image: linear-gradient(to right, #fadcdd, #f6e8f1);
     margin-left: 1rem;
     cursor: pointer;
+    border: 1px solid;
 
     @include mo{
         width: 100%;
@@ -85,7 +112,6 @@
 
 
 
-//공시정보_soo
 .disclosure_soo {
     .table_default{
         &.type03 {
@@ -116,8 +142,8 @@
     .sub_sort_wr {
         display: flex;
         justify-content: center;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(0,0,0,.05);
+        border-bottom: 1px solid rgba(0,0,0,.05);
         padding: 5rem 0;
         margin-bottom: 4rem;
 
@@ -198,38 +224,73 @@
     }
 
     .nice-select-wrap {
-        margin: 0;
-        @include fz15; 
-        border-radius: 5px;
-        padding-left: 2rem;
-        border-radius: 2.4rem;
-        box-shadow: none;
         width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        transition: background 300ms ease;
+        border-radius: 23px;
+        box-shadow: 0 0 13.5px 1.5px rgba(151, 132, 132, 0.08);
+        background-color: #f8f8f8;
+        position: absolute;
+        left: 0;
         top: 0;
-        z-index: 5;
+
+        @include mo{
+            width: 100%;
+            left: 0;
+            top: 30px;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
         
         &.down{
-            box-shadow: 0 0 13.5px 1.5px rgba(151,132,132,.08);
-        }
-        .drop{
-            padding: 0;
-            @include fz15;
-            @include mo {
-                height: 3.7rem;
-                line-height: 3.7rem;
-                font-size: clamp(1rem,1vw,1.6rem);
+            background-color: #fff;
+
+            .drop{
+              color: rgba(22, 22, 22, 0.4);
             }
+            
+            .drop::after {
+              background: url("/img/icon/drop_up_black.png") no-repeat 90% center;
+            }
+        }
+
+        .drop, ul a {
+            width:100%;
+            display: block;
+            text-decoration: none;
+            color: rgba(22, 22, 22, 0.8);
+            line-height: 4.8rem;
+            height: 4.8rem;
+            font-size: clamp(1.2rem,1vw,1.6rem);
+            padding: 0 2.9rem;
+        
+            @include mo{
+              height: 3rem;
+              line-height: 3rem;
+            }
+        }
+
+        .drop {
+            position: relative;
+            
             &::after {
-                @include mo {
-                    right: 1.2rem;
-                }
+              content: '';
+              display: block; 
+              height: 1rem;
+              width: 1.7rem;
+              pointer-events: none;
+              position: absolute; 
+              right: 1.5rem; 
+              top: 50%; 
+              background: url("/img/icon/drop_down_black.png") no-repeat 90% center;
+              transform: translateY(-50%);
+        
+              @include mo {
+                right: 1.5rem;
+              }
             }
-        }
-        ul {
-            a {
-                padding: 0;
-            }
-        }
+          }
     }
 
     .nice-select{
@@ -246,24 +307,11 @@
 
 
 .selectDateBox{
-    // pointer-events: none;
-    // cursor: default;
     position: relative;
 
     @include mo{
         margin-top: 1.5rem;
     }
-
-    // &::before{
-    //     content: "";
-    //     width: 100%;
-    //     height: 100%;
-    //     background-color: rgba(0, 0, 0, 0.1);
-    //     border-radius: 2.4rem;
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    // }
 
     &.on{
         pointer-events: auto;
@@ -279,7 +327,6 @@
     background: url(/img/icon/general_icon_calender.png) left center/36px no-repeat;
     padding-left: 5.4rem;
     padding-right: 4.7rem;
-    // width: 20rem;
 
     @include mo{
         background: url(/img/icon/general_icon_calender.png) left center/26px no-repeat;
@@ -287,3 +334,112 @@
         padding-right: 0;
     }
 }
+
+.noti{
+    a{
+        text-decoration: underline;
+    }
+}
+
+.nice-select-inner {
+    margin: 0 auto;
+    overflow: hidden;
+    transition: background 300ms ease;
+    width: 10rem;
+    border-radius: 23px;
+    box-shadow: 0 0 13.5px 1.5px rgba(151, 132, 132, 0.08);
+      background-color: #eee;
+    
+    &.down {
+      background-color: #fff;
+  
+      .drop{
+        color: rgba(22, 22, 22, 0.4);
+      }
+      
+      .drop::after {
+        background: url("/img/icon/drop_up_black.png") no-repeat 90% center;
+      }
+    }
+    
+    .drop, ul a {
+      display: block;
+      text-decoration: none;
+      color: rgba(22, 22, 22, 0.8);
+      line-height: 2.8rem;
+      height: 2.8rem;
+      font-size: clamp(1.2rem,1vw,1.6rem);
+      padding: 0 1rem;
+    }
+    
+    .drop {
+      position: relative;
+      
+      &::after {
+        content: '';
+        display: block; 
+        height: 1rem;
+        width: 1.7rem;
+        pointer-events: none;
+        position: absolute; 
+        right: 1.5rem; 
+        top: 50%; 
+        background: url("/img/icon/drop_down_black.png") no-repeat 90% center;
+        transform: translateY(-50%);
+      }
+    }
+    
+    ul {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      max-height: 20rem;
+      overflow-y: auto;
+      display: none;
+          
+      &::-webkit-scrollbar {
+        width: 2px;  /* 스크롤바의 너비 */
+      }
+    
+      &::-webkit-scrollbar-thumb {
+          height: 5%; /* 스크롤바의 길이 */
+          background: rgba(64, 64, 64, 0.5); /* 스크롤바의 색상 */
+          
+          border-radius: 10px;
+        }
+      
+      &::-webkit-scrollbar-track {
+        width: 50px;
+        background: #fff;  /*스크롤바 뒷 배경 색상*/
+      }
+  
+      &::-webkit-scrollbar-button:vertical:start:decrement,
+      .sidebar.close > .copy-sub > .sub-menu::-webkit-scrollbar-button:vertical:start:increment {
+          display: block;
+          height: 25px;
+      }
+  
+      &::-webkit-scrollbar-button:vertical:end:decrement {
+          display: block;
+          width: 25px;
+      }
+      
+      a {
+        position: relative;
+        
+        &:hover {
+          background-color: #fff;
+        }
+      }
+  
+      &.select-ul{
+        &.down{
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  

@@ -1,0 +1,164 @@
+.t_box{
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    // max-width: 138rem;
+    margin: 0 auto;
+    // table-layout: fixed;
+    border-right: 1px solid rgba(41, 41, 41, 0.2);
+    border-top: 2px solid rgba(41, 41, 41, 0.3);
+    white-space: nowrap;
+
+    thead{
+        background-color: #f8f8f8;
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: #161616;
+        line-height: 1;
+        letter-spacing: -0.96px;
+        position: relative;
+        
+        tr{
+            th{
+                padding: 1.8rem 0;
+                border-right: 1px solid rgba(41, 41, 41, 0.2);
+                border-bottom: 1px solid rgba(41, 41, 41, 0.2);
+                @include fz16;
+                font-weight: 500;
+                min-width: 24.3rem;
+                min-width: clamp(8rem,12.6vw, 24.3rem);
+
+                &:first-child {
+                    border-left: 1px solid rgba(41, 41, 41, 0.2);
+                }
+
+                @include mo{
+                    padding: 1.5rem 0;
+                }
+            }
+        }
+
+        // &::before {
+        //     content: "";
+        //     width: 100%;
+        //     height: 2px;
+        //     background: rgba(41, 41, 41, 0.3);
+        //     position: absolute;
+        //     left: 0;
+        //     top: 0;
+        // }
+    }
+    
+    tbody tr {
+        position: relative;
+        border-bottom: 1px solid rgba(41, 41, 41, 0.3);
+        // cursor: pointer;
+        @include transition;
+        @include mo {
+            border-color: rgba(41, 41, 41, 0.3);
+        }
+        
+        td {
+            padding: 3rem 0;
+            text-align: center;
+            border-right: 1px solid rgba(41, 41, 41, 0.2);
+            @include fz16;
+            letter-spacing: -0.96px;
+            font-weight: normal;
+            color: rgba(22, 22, 22, 0.8);
+
+            @include tablet {
+                padding: 2.5rem 0;
+            }
+            @include mo {
+                padding: 1rem 1rem;
+            }
+
+            &:first-child{
+                border-left: 1px solid rgba(41, 41, 41, 0.2); 
+            }
+
+            &.num {
+                font-size: 1.7rem;
+                font-weight: normal;
+                width: 8%;
+                @include mo {
+                    font-size: 1.1rem;
+                    width: 10%;
+                }
+            }
+
+            &.tit {
+                font-size: 2.4rem;
+                font-weight: bold;
+                text-align: left;
+                padding-right: 1rem;
+                width: 69%;
+                a {
+                    @include textover_1;
+                }
+                @include mo {
+                    font-size: 1.5rem;
+                    padding-left: 1.5rem;
+                    width: 90%;
+                }
+            }
+
+            &.date {
+                width: 13%;
+                @include mo {
+                    width: 0;
+                }
+            }
+            .move_date {
+                font-size: 1.8rem;
+                font-weight: 600;
+                @include mo {
+                    font-size: 1.2rem;
+                    // font-weight: 500;
+                    letter-spacing: normal;
+                }
+            }
+
+            &.more_btn {
+                width: 10%;
+                a {
+                    font-size: 1.2rem;
+                    font-weight: normal;
+                    color: #666;
+                    position: relative;
+
+                    &:after {
+                        @include virtual;
+                        position: relative;
+                        display: inline-block;
+                        margin-left: 1rem;
+                        width: 0.9rem;
+                        height: 0.9rem;
+                        background: url(../../img/front/common/btn_more.png) no-repeat center;
+                    }
+                }
+                @include mo {
+                    display: none;
+                }
+            }
+
+            &:first-child {
+                text-align: center;
+            }
+
+            &:last-child {
+                text-align: center;
+            }
+
+            a {
+                font-size: inherit;
+                font-weight: inherit;
+                width: 100%;
+                display: block;
+            }
+        }   
+    }
+}

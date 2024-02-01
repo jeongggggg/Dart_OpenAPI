@@ -1,0 +1,313 @@
+/* 웹폰트 */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.cdnfonts.com/css/handelgothic-bt'); */
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
+@import url('http://fonts.googleapis.com/earlyaccess/notosansjp.css'); 
+@import url('http://fonts.googleapis.com/earlyaccess/notosanssc.css'); 
+
+
+:root {
+	--main_color: #1758FA;
+}
+
+
+* {
+	font-family: 'NotoSansCJKkr', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+	line-height: 1.6;
+	box-sizing: border-box;
+	font-size: 1.4rem;
+	font-weight: normal;
+	font-style: normal;
+	color: #161616;
+	letter-spacing: -0.08rem;
+	padding: 0;
+	margin: 0;
+	word-break: keep-all;
+}
+
+html,
+body {
+	width: 100vw;
+	width: 100%;
+	overflow-x: clip;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+button {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+
+a,
+a:hover,
+a:focus,
+button {
+	text-decoration: none;
+	/* color: inherit; */
+}
+
+img {
+	max-width: 100%;
+	vertical-align: top;
+	height: auto;
+}
+
+iframe {
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 100px #fff inset;
+	-moz-box-shadow: 0 0 0 100px #fff inset;
+	box-shadow: 0 0 0 100px #fff inset;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	cursor: pointer;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border-right: 1rem solid transparent;
+}
+
+header,
+footer,
+aside,
+main,
+section,
+article,
+nav {
+	display: block;
+}
+
+ul,
+li {
+	margin: 0;
+	list-style: none;
+}
+
+::selection {
+	color: #fff;
+	background: rgba(0, 0, 0, 0.99);
+}
+
+*:focus,
+a:hover,
+button:hover,
+input:hover {
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+span,
+strong,
+b,
+em {
+	color: inherit;
+	font-size: 100%;
+	font-weight: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+}
+
+button,
+textarea,
+input,
+select,
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	border: none;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+}
+
+
+button,
+input,
+select,
+a {
+	background-color: transparent;
+}
+
+button,
+textarea,
+input {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+button {
+	border: 0;
+	outline: none;
+	background: none;
+}
+
+font {
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	line-height: inherit;
+}
+
+legend {
+	display: block;
+	border: none;
+	padding: 0;
+}
+
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+	display: table-cell;
+}
+
+@supports (-webkit-touch-callout: none) {
+
+	#header #sidebar .inner,
+	.main_popup {
+		height: -webkit-fill-available;
+	}
+}
+
+@media (min-width: 1681px) and (max-width: 1800px) {
+
+	html,
+	body {
+		font-size: 58%;
+	}
+}
+
+@media (min-width: 1441px) and (max-width: 1680px) {
+
+	html,
+	body {
+		font-size: 56%;
+	}
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+
+	html,
+	body {
+		font-size: 54%;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+	html,
+	body {
+		font-size: 51.5%;
+	}
+}
+
+@media (min-width: 990px) and (max-width: 1024px) {
+
+	html,
+	body {
+		font-size: 51%;
+	}
+
+	.br_dn {
+		word-break: keep-all;
+	}
+
+	.br_dn br {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 989px) {
+
+	html,
+	body {
+		font-size: 50%;
+	}
+
+	.br_dn {
+		word-break: keep-all;
+	}
+
+	.br_dn br {
+		display: none;
+	}
+}
+
+@media (min-width: 501px) and (max-width: 767px) {
+
+	html,
+	body {
+		font-size: 65%;
+	}
+
+	.br_dn {
+		word-break: keep-all;
+	}
+
+	.br_dn br:not(.mo) {
+		display: none;
+	}
+}
+
+@media (min-width: 351px) and (max-width: 500px) {
+
+	html,
+	body {
+		font-size: 62.5%;
+	}
+
+	.br_dn {
+		word-break: keep-all;
+	}
+
+	.br_dn br:not(.mo) {
+		display: none;
+	}
+}
+
+@media (max-width: 350px) {
+
+	html,
+	body {
+		font-size: 58%;
+	}
+
+	.br_dn {
+		word-break: keep-all;
+	}
+
+	.br_dn br:not(.mo) {
+		display: none;
+	}
+}
