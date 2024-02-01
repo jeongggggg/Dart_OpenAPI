@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dart_OpenAPI</title>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="/css/index.min.css">
-    <script src="/js/index.js"></script>
-    <script src="/js/library/jquery.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/library/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!--datePicker-->
@@ -21,6 +20,7 @@
     <link rel="stylesheet" href="/niceSelect/nice-select2.css">
     <script type="text/javascript" src="/niceSelect/jquery.nice-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
 </head>
 <body>
     <div class="wrap">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="selectDateBox input_period com-gray_box">
                         <input type="text" id="startDate" class="date_time_picker period_show_start back_search_obj" readonly>
-                        <img src="/img/icon/icon_hyphen_gray.webp" alt="aekyung" class="hyphen icon">
+                        <img src="/img/icon/icon_hyphen_gray.webp" alt="" class="hyphen icon">
                         <input type="text" id="endDate" class="date_time_picker period_show_end back_search_obj" readonly>
                     </div>
                 </div>
@@ -83,5 +83,41 @@
             </div>
         </div>
     </div>
+
+    <script src="/js/index.js"></script>
+    
+    <!-- <script>
+        api 불러오기 테스트
+        
+        window.onload = function(){
+            openDartApi();
+        }
+
+        const openDartApi = () => {
+            const localUrl = "https://cors-anywhere.herokuapp.com/https://opendart.fss.or.kr/api/list.json?crtfc_key=d8766b6344b76c2a1c1cbcd15598b2ca2472ec8a&corp_code=00126380&bgn_de=20221221&end_de=20231221&corp_cls=Y&page_no=1&page_count=15";
+            const serverUrl = "https://opendart.fss.or.kr/api/list.json?crtfc_key=d8766b6344b76c2a1c1cbcd15598b2ca2472ec8a&corp_code=00126380&bgn_de=20221221&end_de=20231221&corp_cls=Y&page_no=1&page_count=15&pblntf_ty=A";
+
+            axios
+                .get(location.host.includes('127.0.0.1') ? localUrl : serverUrl)
+                .then((response) => {
+                    const object = response.data;
+                    if(object.message === "정상") { // 화면에 뿌릴때 innerHtml 쓰지 않기.
+                        console.log(object.page_no); // 페이지네이션 class에 on을 줘서 선택된거.
+                        // 넘버링 : (page_no -1) * page_count + list[i] + 1
+                        console.log(object);
+                        console.log(object.list[0].report_nm);
+                    } else {
+                        alert("비정상적인 접근입니다.");
+                        location.href = "/";
+                    }
+                })
+                .catch((error) => {
+                    console.log(`error ${error}`);
+                })
+                .finally(() => {
+                    console.log("===opendart end===");
+                });
+        }
+    </script> -->
 </body>
 </html>
